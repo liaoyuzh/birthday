@@ -42,7 +42,7 @@ interface ColorCount {
   color: string;
 }
 
-const BEADS_CSV_PATH = '/assets/birthday/beads2.csv';
+const BEADS_CSV_PATH = `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/assets/birthday/beads2.csv`;
 
 function cellsAlongLine(r0: number, c0: number, r1: number, c1: number): GridCell[] {
   const cells: GridCell[] = [];
@@ -554,7 +554,7 @@ export default function Beads2Page() {
     if (fusionMap && remaining === 0) {
       setTimeout(() => {
         if (confirm('恭喜宝宝通关 接下来看看下一个吧~')) {
-          router.push('/beads');
+          router.push(`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/beads`);
         }
       }, 300);
     }
@@ -578,7 +578,7 @@ export default function Beads2Page() {
           <p className="text-red-500 mb-4">{error || '加载失败'}</p>
           <button
             type="button"
-            onClick={() => { window.location.href = '/index.html'; }}
+            onClick={() => { window.location.href = `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/index.html`; }}
             className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
           >
             返回主页
@@ -672,7 +672,7 @@ export default function Beads2Page() {
             </button>
             <button
               type="button"
-              onClick={() => { window.location.href = '/index.html'; }}
+              onClick={() => { window.location.href = `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/index.html`; }}
               className="px-3 py-1.5 text-xs rounded-lg border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
             >
               返回主页

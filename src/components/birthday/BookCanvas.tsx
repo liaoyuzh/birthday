@@ -47,7 +47,7 @@ export default function BookCanvas({ active, setActive }: BookCanvasProps) {
           </div>
 
           <div className="userImg">/
-            <Image src="/assets/birthday/profile2.jpg" alt="Recipient's Photo" width={200} height={200} />
+            <Image src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/assets/birthday/profile2.jpg`} alt="Recipient's Photo" width={200} height={200} />
           </div>
 
           <div className="hello-kitty-bow-pattern"></div>

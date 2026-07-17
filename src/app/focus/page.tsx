@@ -186,11 +186,11 @@ export default function FocusMode() {
       } catch (error) {
         console.error('Failed to load focus mode data:', error);
         // 重定向到主页面
-        window.location.href = '/index.html';
+        window.location.href = `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/index.html`;
       }
     } else {
       // 没有数据，重定向到主页面
-      window.location.href = '/index.html';
+      window.location.href = `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/index.html`;
     }
   }, []);
 

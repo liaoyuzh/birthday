@@ -175,7 +175,7 @@ export default function OrganizeModePage() {
     const savedColorSystem = localStorage.getItem(ORGANIZE_STORAGE_KEYS.colorSystem);
 
     if (!savedPixelData || !savedGridDimensions || !savedColorCounts) {
-      window.location.href = '/index.html';
+      window.location.href = `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/index.html`;
       return;
     }
 
@@ -198,7 +198,7 @@ export default function OrganizeModePage() {
       setColorSystem((savedColorSystem as ColorSystem) || 'MARD');
       setTotalBeads(getTotalInventoryCount(beadInventory));
     } catch {
-      window.location.href = '/index.html';
+      window.location.href = `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/index.html`;
     }
   }, []);
 
@@ -530,7 +530,7 @@ export default function OrganizeModePage() {
             </button>
             <button
               type="button"
-              onClick={() => { window.location.href = '/index.html'; }}
+              onClick={() => { window.location.href = `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/index.html`; }}
               className="px-3 py-1.5 text-xs rounded-lg border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
             >
               返回主页

@@ -144,7 +144,7 @@ export async function optimizeImageWithAI(
     onProgress?.(30);
 
     // 调用API
-    const response = await fetch('/api/ai-optimize', {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/api/ai-optimize`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

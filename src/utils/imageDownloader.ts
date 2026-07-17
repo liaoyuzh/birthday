@@ -231,7 +231,7 @@ export async function downloadImage({
   
   // 加载二维码图片
   const qrCodeImage = new Image();
-  qrCodeImage.src = '/website_qrcode.png'; // 使用public目录中的图片
+  qrCodeImage.src = `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/website_qrcode.png`; // 使用public目录中的图片
   
   // 主要下载处理函数
   const processDownload = () => {
