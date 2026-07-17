@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import { assetPath } from '../lib/path';
 
 interface DonationModalProps {
   isOpen: boolean;
@@ -46,7 +47,7 @@ const DonationModal: React.FC<DonationModalProps> = ({ isOpen, onClose }) => {
             <div className="flex justify-center mb-4 sm:mb-5">
               <div className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 p-1 sm:p-2 bg-gradient-to-r from-pink-100 to-rose-100 dark:from-pink-900/30 dark:to-rose-900/30 rounded-lg shadow-md">
                 <Image
-                  src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/donation-qr.jpg`}
+                  src={assetPath("/donation-qr.jpg")}
                   alt="赞赏码"
                   fill
                   className="object-contain p-1 sm:p-2"

@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
+import { assetPath } from "../lib/path";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,7 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "宝贝的生日礼物",
   description: "上传图片，调整精细度，一键生成像素画图纸，简单实用的像素画生成工具",
-manifest: `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/manifest.json`,
+  manifest: assetPath("/manifest.json"),
     appleWebApp: {
       capable: true,
       statusBarStyle: "default",
@@ -24,11 +25,11 @@ manifest: `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/manifest.json`,
     },
     icons: {
       icon: [
-        { url: `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/icon-192x192.png`, sizes: "192x192", type: "image/png" },
-        { url: `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/icon-512x512.png`, sizes: "512x512", type: "image/png" },
+        { url: assetPath("/icon-192x192.png"), sizes: "192x192", type: "image/png" },
+        { url: assetPath("/icon-512x512.png"), sizes: "512x512", type: "image/png" },
       ],
       apple: [
-        { url: `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/icon-192x192.png`, sizes: "192x192", type: "image/png" },
+        { url: assetPath("/icon-192x192.png"), sizes: "192x192", type: "image/png" },
       ],
     },
 };

@@ -18,6 +18,7 @@ import {
   isPatternCell,
 } from '../../utils/organizeModeUtils';
 import { GridCell, getOptimalCellSize } from '../../utils/gridSnapUtils';
+import { assetPath } from '../../lib/path';
 
 interface DragState {
   source: DragSource;
@@ -41,7 +42,7 @@ interface ColorCount {
   color: string;
 }
 
-const BEADS_CSV_PATH = `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/assets/birthday/beads1.csv`;
+const BEADS_CSV_PATH = assetPath("/assets/birthday/beads1.csv");
 
 function cellsAlongLine(r0: number, c0: number, r1: number, c1: number): GridCell[] {
   const cells: GridCell[] = [];

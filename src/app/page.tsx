@@ -6,6 +6,7 @@ import OpeningAnimation from '@/components/birthday/OpeningAnimation';
 import BookCanvas from '@/components/birthday/BookCanvas';
 import SmallLetter from '@/components/birthday/SmallLetter';
 import '@/app/birthday/birthday.css';
+import { assetPath } from '@/lib/path';
 
 export default function HomePage() {
   const [loading, setLoading] = useState(true);
@@ -80,8 +81,8 @@ export default function HomePage() {
       {showContent && (
         <div id="wrapper">
           <div className="flag__birthday">
-            <Image src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/assets/birthday/1.png`} alt="" width={350} height={200} className="flag__left" />
-            <Image src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/assets/birthday/1.png`} alt="" width={350} height={200} className="flag__right" />
+            <Image src={assetPath("/assets/birthday/1.png")} alt="" width={350} height={200} className="flag__left" />
+            <Image src={assetPath("/assets/birthday/1.png")} alt="" width={350} height={200} className="flag__right" />
           </div>
 
           <div className="content">
@@ -105,7 +106,7 @@ export default function HomePage() {
                   <span style={{ "--t": "6.4s" } as React.CSSProperties}>y</span>
                 </h1>
                 <div className="hat">
-                  <Image src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/assets/birthday/hat.png`} alt="" width={130} height={130} />
+                  <Image src={assetPath("/assets/birthday/hat.png")} alt="" width={130} height={130} />
                 </div>
               </div>
 
@@ -138,7 +139,7 @@ export default function HomePage() {
             <div className="right">
               <div className="box__account">
                 <div className="image">
-                  <Image src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/assets/birthday/profile2.jpg`} alt="" width={400} height={400} />
+                  <Image src={assetPath("/assets/birthday/profile2.jpg")} alt="" width={400} height={400} />
                 </div>
                 <div className="name">
                   <i className="fa-solid fa-heart"></i>
@@ -146,10 +147,10 @@ export default function HomePage() {
                   <i className="fa-solid fa-heart"></i>
                 </div>
                 <div className="balloon_one">
-                  <Image width={100} height={150} src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/assets/birthday/balloon1.png`} alt="" />
+                  <Image width={100} height={150} src={assetPath("/assets/birthday/balloon1.png")} alt="" />
                 </div>
                 <div className="balloon_two">
-                  <Image width={100} height={150} src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/assets/birthday/balloon2.png`} alt="" />
+                  <Image width={100} height={150} src={assetPath("/assets/birthday/balloon2.png")} alt="" />
                 </div>
               </div>
 
@@ -173,21 +174,21 @@ export default function HomePage() {
           ))}
 
           <div className="decorate_flower--one" style={{ "--t": "15s" } as React.CSSProperties}>
-            <Image width={20} height={20} src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/assets/birthday/decorate_flower.png`} alt="" />
+            <Image width={20} height={20} src={assetPath("/assets/birthday/decorate_flower.png")} alt="" />
           </div>
           <div className="decorate_flower--two" style={{ "--t": "15.3s" } as React.CSSProperties}>
-            <Image width={20} height={20} src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/assets/birthday/decorate_flower.png`} alt="" />
+            <Image width={20} height={20} src={assetPath("/assets/birthday/decorate_flower.png")} alt="" />
           </div>
           <div className="decorate_flower--three" style={{ "--t": "15.6s" } as React.CSSProperties}>
-            <Image width={20} height={20} src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/assets/birthday/decorate_flower.png`} alt="" />
+            <Image width={20} height={20} src={assetPath("/assets/birthday/decorate_flower.png")} alt="" />
           </div>
 
           <div className="decorate_bottom">
-            <Image src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/assets/birthday/decorate.png`} alt="" width={100} height={100} />
+            <Image src={assetPath("/assets/birthday/decorate.png")} alt="" width={100} height={100} />
           </div>
 
           <div className="smiley__icon">
-            <Image src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/assets/birthday/smiley_icon.png`} alt="" width={100} height={100} />
+            <Image src={assetPath("/assets/birthday/smiley_icon.png")} alt="" width={100} height={100} />
           </div>
 
           <BookCanvas active={showBook} setActive={setShowBook} />

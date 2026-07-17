@@ -1,6 +1,7 @@
 import { GridDownloadOptions } from '../types/downloadTypes';
 import { MappedPixel, PaletteColor } from './pixelation';
 import { getDisplayColorKey, getColorKeyByHex, ColorSystem } from './colorSystemUtils';
+import { assetPath } from '../lib/path';
 
 // 用于获取对比色的工具函数 - 从page.tsx复制
 function getContrastColor(hex: string): string {
@@ -231,7 +232,7 @@ export async function downloadImage({
   
   // 加载二维码图片
   const qrCodeImage = new Image();
-  qrCodeImage.src = `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/website_qrcode.png`; // 使用public目录中的图片
+  qrCodeImage.src = assetPath("/website_qrcode.png"); // 使用public目录中的图片
   
   // 主要下载处理函数
   const processDownload = () => {

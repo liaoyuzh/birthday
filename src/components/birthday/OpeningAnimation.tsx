@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import { assetPath } from '../../lib/path';
 
 interface OpeningAnimationProps {
   animateOut: boolean;
@@ -192,7 +193,7 @@ export default function OpeningAnimation({ animateOut }: OpeningAnimationProps) 
           <div className="MUNNA cakeText">
             <h1 className="MUNNA cakeText-title">18岁生日快乐！</h1>
             <div className="MUNNA cakeText-name">
-              亲爱的文静宝宝 <div className="MUNNA cakeText-kitty-bow"></div>
+              亲爱的文静宝宝 <div className="MUNNA cakeText-kitty-bow" style={{ '--ribbon-url': `url(${assetPath("/assets/birthday/ribbonImg.png")})` } as React.CSSProperties}></div>
             </div>
           </div>
         </div>
