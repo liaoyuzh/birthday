@@ -1,4 +1,5 @@
 // AI图片优化工具函数
+import { assetPath } from '../lib/path';
 
 const DEFAULT_PROMPT = '图片修改为：chibi画风，背景白底。pixel art style, 16-bit, retro game aesthetic, sharp focus, high contrast, clean lines, detailed pixel art, masterpiece, best quality';
 
@@ -144,7 +145,7 @@ export async function optimizeImageWithAI(
     onProgress?.(30);
 
     // 调用API
-    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/api/ai-optimize`, {
+    const response = await fetch(assetPath("/api/ai-optimize"), {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

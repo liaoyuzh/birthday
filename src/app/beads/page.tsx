@@ -550,7 +550,7 @@ export default function BeadsPage() {
           <p className="text-red-500 mb-4">{error || '加载失败'}</p>
           <button
             type="button"
-            onClick={() => { window.location.href = `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/index.html`; }}
+            onClick={() => { window.location.href = assetPath("/index.html"); }}
             className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
           >
             返回主页
@@ -598,7 +598,7 @@ export default function BeadsPage() {
             </button>
             <button
               type="button"
-              onClick={() => { window.location.href = `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/index.html`; }}
+              onClick={() => { window.location.href = assetPath("/index.html"); }}
               className="px-3 py-1.5 text-xs rounded-lg border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
             >
               返回主页

@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import { assetPath } from '../../lib/path';
 import { MappedPixel, PaletteColor } from '../../utils/pixelation';
 import { 
   getAllConnectedRegions, 
@@ -186,11 +187,11 @@ export default function FocusMode() {
       } catch (error) {
         console.error('Failed to load focus mode data:', error);
         // 重定向到主页面
-        window.location.href = `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/index.html`;
+        window.location.href = assetPath("/index.html");
       }
     } else {
       // 没有数据，重定向到主页面
-      window.location.href = `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/index.html`;
+      window.location.href = assetPath("/index.html");
     }
   }, []);
 

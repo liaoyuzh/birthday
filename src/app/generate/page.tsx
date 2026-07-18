@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useRef, ChangeEvent, DragEvent, useEffect, useMemo, useCallback } from 'react';
+import { assetPath } from '../../lib/path';
 import Script from 'next/script';
 import InstallPWA from '../../components/InstallPWA';
 
@@ -407,7 +408,7 @@ export default function Home() {
     localStorage.setItem('focusMode_selectedColorSystem', selectedColorSystem);
 
     // 跳转到专心拼豆页面
-    window.location.href = `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/focus.html`;
+    window.location.href = assetPath("/focus.html");
   };
 
   const handleProceedToOrganizeMode = () => {
@@ -416,7 +417,7 @@ export default function Home() {
     localStorage.setItem('organizeMode_colorCounts', JSON.stringify(colorCounts));
     localStorage.setItem('organizeMode_selectedColorSystem', selectedColorSystem);
 
-    window.location.href = `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/organize.html`;
+    window.location.href = assetPath("/organize.html");
   };
 
   // 添加一个安全的文件输入触发函数

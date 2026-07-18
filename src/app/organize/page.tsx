@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useCallback, useRef } from 'react';
+import { assetPath } from '../../lib/path';
 import { MappedPixel } from '../../utils/pixelation';
 import { getColorKeyByHex, ColorSystem } from '../../utils/colorSystemUtils';
 import BeadInventoryPanel, { DragSource } from '../../components/BeadInventoryPanel';
@@ -175,7 +176,7 @@ export default function OrganizeModePage() {
     const savedColorSystem = localStorage.getItem(ORGANIZE_STORAGE_KEYS.colorSystem);
 
     if (!savedPixelData || !savedGridDimensions || !savedColorCounts) {
-      window.location.href = `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/index.html`;
+      window.location.href = assetPath("/index.html");
       return;
     }
 
@@ -198,7 +199,7 @@ export default function OrganizeModePage() {
       setColorSystem((savedColorSystem as ColorSystem) || 'MARD');
       setTotalBeads(getTotalInventoryCount(beadInventory));
     } catch {
-      window.location.href = `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/index.html`;
+      window.location.href = assetPath("/index.html");
     }
   }, []);
 
@@ -530,7 +531,7 @@ export default function OrganizeModePage() {
             </button>
             <button
               type="button"
-              onClick={() => { window.location.href = `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/index.html`; }}
+              onClick={() => { window.location.href = assetPath("/index.html"); }}
               className="px-3 py-1.5 text-xs rounded-lg border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
             >
               返回主页

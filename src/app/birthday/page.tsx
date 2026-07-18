@@ -125,7 +125,7 @@ export default function BirthdayPage() {
                   </div>
                 </button>
                 <div id="FromRexon">
-                  <button onClick={() => window.location.href = `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/beads2.html`} className="flex items-center gap-2 md:text-[1rem] text-sm">
+                  <button onClick={() => window.location.href = assetPath("/beads2.html")} className="flex items-center gap-2 md:text-[1rem] text-sm">
                     <svg className='w-7 h-7' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72">
                       <path fill="#fff" d="M65.086 55.5H6.878A2.877 2.877 0 0 1 4 52.623V17.248A2.25 2.25 0 0 1 6.248 15h59.446A2.306 2.306 0 0 1 68 17.306v35.28a2.914 2.914 0 0 1-2.914 2.914" />
                       <path fill="#ea5a47" d="M47.064 33.552A5.885 5.885 0 0 0 36 30.755a5.885 5.885 0 0 0-11.064 2.797c0 1.398.49 2.68 1.304 3.69l-.002.002L36 49.342l9.762-12.098l-.003-.002a5.86 5.86 0 0 0 1.305-3.69" />
