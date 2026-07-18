@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import OpeningAnimation from '@/components/birthday/OpeningAnimation';
 import BookCanvas from '@/components/birthday/BookCanvas';
-import SmallLetter from '@/components/birthday/SmallLetter';
 import '@/app/birthday/birthday.css';
 import { assetPath } from '@/lib/path';
 
@@ -193,9 +192,6 @@ export default function HomePage() {
 
           <BookCanvas active={showBook} setActive={setShowBook} />
 
-          <section className="smallLetter absolute md:-bottom-26 -bottom-40 md:left-[45%] left-[50%] -translate-x-1/2" style={{ "--t": "15.6s" } as React.CSSProperties}>
-            <SmallLetter />
-          </section>
         </div>
       )}
     </>
