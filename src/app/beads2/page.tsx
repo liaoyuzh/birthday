@@ -555,7 +555,7 @@ export default function Beads2Page() {
     if (fusionMap && remaining === 0) {
       setTimeout(() => {
         if (confirm('恭喜宝宝通关 接下来看看下一个吧~')) {
-          router.push(assetPath("/beads.html"));
+          router.push("/birthday/beads.html");
         }
       }, 300);
     }
